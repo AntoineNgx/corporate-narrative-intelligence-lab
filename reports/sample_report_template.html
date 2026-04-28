@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Narrative Signal Report</title>
+    <style>
+      body { font-family: Arial, sans-serif; color: #172026; margin: 40px; line-height: 1.45; }
+      header { border-bottom: 2px solid #1f6feb; margin-bottom: 24px; padding-bottom: 12px; }
+      h1 { margin: 0; font-size: 28px; }
+      h2 { margin-top: 28px; font-size: 18px; color: #1f6feb; }
+      .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+      .metric { border: 1px solid #d8dee4; border-radius: 8px; padding: 12px; }
+      .label { color: #57606a; font-size: 12px; text-transform: uppercase; }
+      .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+      .excerpt { background: #f6f8fa; border-left: 4px solid #1f6feb; padding: 12px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ signal.ticker }} Narrative Signal Report</h1>
+      <p>{{ signal.previous_year }} to {{ signal.fiscal_year }} | {{ signal.section }}</p>
+    </header>
+
+    <div class="grid">
+      <div class="metric"><div class="label">Similarity</div><div class="value">{{ "%.2f"|format(signal.cosine_similarity) }}</div></div>
+      <div class="metric"><div class="label">Similarity Drop</div><div class="value">{{ "%.2f"|format(signal.similarity_drop) }}</div></div>
+      <div class="metric"><div class="label">Tone Delta</div><div class="value">{{ "%.3f"|format(signal.delta_net_tone) }}</div></div>
+      <div class="metric"><div class="label">Topic Shift</div><div class="value">{{ "%.2f"|format(signal.topic_shift_score) }}</div></div>
+    </div>
+
+    <h2>Alert</h2>
+    <p><strong>{{ "Abnormal change detected" if signal.abnormal_change_flag else "No abnormal change detected" }}</strong></p>
+    <p>{{ signal.abnormal_change_reason }}</p>
+
+    <h2>Interpretation</h2>
+    <p>{{ interpretation }}</p>
+
+    <h2>Before Excerpt</h2>
+    <p class="excerpt">{{ signal.previous_excerpt }}</p>
+
+    <h2>After Excerpt</h2>
+    <p class="excerpt">{{ signal.current_excerpt }}</p>
+
+    <h2>Linked Events</h2>
+    {% if events %}
+      <ul>
+      {% for event in events %}
+        <li>{{ event.event_date }}: {{ event.event_description }} ({{ event.event_type }})</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No linked leadership event for this fiscal year.</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,1 @@
+change_id,company_id,fiscal_year,previous_year,section,cosine_similarity,similarity_drop,delta_net_tone,delta_finbert_sentiment,delta_fog_index,topic_shift_score,abnormal_change_flag,abnormal_change_reason
