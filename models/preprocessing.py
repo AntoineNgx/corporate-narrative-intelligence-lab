@@ -21,10 +21,31 @@ class FilingInput:
 
 
 def clean_text(text: str) -> str:
-    """Normalize whitespace while preserving sentence boundaries."""
     text = text.replace("\x00", " ")
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def clean_xml_text(raw: str, max_words: int = 10_000) -> str:
+    """Remove financial-table noise and deduplicate lines from XML-extracted 10-K text."""
+    seen: set[str] = set()
+    kept: list[str] = []
+    for line in raw.split("\n"):
+        line = re.sub(r"\s+", " ", line).strip()
+        if len(line.split()) < 8:
+            continue
+        alpha = sum(c.isalpha() for c in line)
+        if alpha / max(len(line), 1) < 0.55:
+            continue
+        lower = sum(c.islower() for c in line)
+        if lower / max(alpha, 1) < 0.4:
+            continue
+        if line in seen:
+            continue
+        seen.add(line)
+        kept.append(line)
+    words = " ".join(kept).split()
+    return " ".join(words[:max_words])
 
 
 def word_count(text: str) -> int:
