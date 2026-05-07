@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Narrative Signal Report</title>
+    <style>
+      body { font-family: Arial, sans-serif; color: #172026; margin: 40px; line-height: 1.45; }
+      header { border-bottom: 2px solid #1f6feb; margin-bottom: 24px; padding-bottom: 12px; }
+      h1 { margin: 0; font-size: 28px; }
+      h2 { margin-top: 28px; font-size: 18px; color: #1f6feb; }
+      .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+      .metric { border: 1px solid #d8dee4; border-radius: 8px; padding: 12px; }
+      .label { color: #57606a; font-size: 12px; text-transform: uppercase; }
+      .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+      .excerpt { background: #f6f8fa; border-left: 4px solid #1f6feb; padding: 12px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>DEMO Narrative Signal Report</h1>
+      <p>2021 to 2022 | mda</p>
+    </header>
+
+    <div class="grid">
+      <div class="metric"><div class="label">Similarity</div><div class="value">0.41</div></div>
+      <div class="metric"><div class="label">Similarity Drop</div><div class="value">0.59</div></div>
+      <div class="metric"><div class="label">Tone Delta</div><div class="value">-0.067</div></div>
+      <div class="metric"><div class="label">Topic Shift</div><div class="value">0.40</div></div>
+    </div>
+
+    <h2>Alert</h2>
+    <p><strong>Abnormal change detected</strong></p>
+    <p>large similarity drop; tone moved sharply</p>
+
+    <h2>Interpretation</h2>
+    <p>The filing shows an abnormal narrative pattern. Review whether this aligns with leadership transition, financial pressure, portfolio restructuring, or strategic repositioning.</p>
+
+    <h2>Before Excerpt</h2>
+    <p class="excerpt">Our business is focused on developing differentiated therapies for patients with serious unmet medical needs. We advanced our lead clinical program, expanded manufacturing readiness, and maintained a disciplined capital allocation strategy. Collaboration with research partners improved development efficiency and created multiple opportunities for long-term growth.</p>
+
+    <h2>After Excerpt</h2>
+    <p class="excerpt">Our business continues to focus on differentiated therapies for patients with serious unmet medical needs. We advanced the lead clinical program and strengthened our regulatory planning. The company maintained resilience despite supply chain pressure and continued to invest in innovation, quality systems, and portfolio expansion.</p>
+
+    <h2>Linked Events</h2>
+    
+      <p>No linked leadership event for this fiscal year.</p>
+    
+  </body>
+</html>
