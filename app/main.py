@@ -131,9 +131,9 @@ with st.expander("About this research", expanded=False):
         data from S&P Global. Sections are extracted from EDGAR filings and analyzed at the firm-year level.
 
         **Key signals measured:**
-        - **Cosine similarity** (TF-IDF) — how much the text changes year-over-year
-        - **LM tone** — positive, negative, and uncertainty ratios using the Loughran-McDonald finance dictionary
-        - **Gunning Fog** — readability complexity
+        - **Cosine similarity** — How much the text changes year-over-year
+        - **Sentiment Analysis** — Changes of Text Sentiment over years
+        - **Readability** — Changes of reading text over years
         - **Topic shift** — keyword-set distance between adjacent years
         - **Abnormal change score** — weighted combination of the above, cross-referenced with ROA and leadership events
         """
