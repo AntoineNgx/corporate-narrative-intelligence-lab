@@ -118,7 +118,7 @@ st.markdown("")
 _, center, _ = st.columns([1, 1.2, 1])
 with center:
     if st.button("Explore Full Analysis →", type="primary", use_container_width=True):
-        st.switch_page("pages/1_dashboard.py")
+        st.switch_page("pages/1_Narrative Dashboard.py")
 
 st.divider()
 
