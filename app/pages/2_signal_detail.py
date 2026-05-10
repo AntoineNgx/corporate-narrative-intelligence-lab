@@ -8,10 +8,10 @@ import streamlit as st
 from state import ROOT, analysis_frames, initialize_state
 
 
-st.set_page_config(page_title="Signal Detail", layout="wide")
+st.set_page_config(page_title="SIGNAL DETAIL", layout="wide")
 initialize_state()
 
-st.title("Signal Detail")
+st.title("SIGNAL DETAIL")
 
 _, _, changes, events = analysis_frames()
 

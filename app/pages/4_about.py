@@ -3,9 +3,9 @@ from __future__ import annotations
 import streamlit as st
 
 
-st.set_page_config(page_title="About", layout="wide")
+st.set_page_config(page_title="ABOUT", layout="wide")
 
-st.title("About")
+st.title("ABOUT")
 st.write(
     "Corporate Narrative Intelligence is a portfolio demo for analyzing how public-company disclosure language "
     "changes over time. It is designed for biopharma annual report narratives but the architecture can be adapted "

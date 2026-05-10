@@ -7,7 +7,7 @@ import streamlit as st
 from state import analysis_frames, initialize_state
 from data.loader import DEMO_COMPANIES
 
-st.set_page_config(page_title="Narrative Dashboard", layout="wide")
+st.set_page_config(page_title="NARRATIVE DASHBOARD", layout="wide")
 
 st.markdown(
     """

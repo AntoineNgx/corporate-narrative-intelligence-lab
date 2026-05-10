@@ -3,9 +3,9 @@ from __future__ import annotations
 import streamlit as st
 
 
-st.set_page_config(page_title="Methodology", layout="wide")
+st.set_page_config(page_title="METHODOLOGY", layout="wide")
 
-st.title("Methodology")
+st.title("METHODOLOGY")
 
 st.subheader("Hybrid Textual Analysis Model")
 st.write(
