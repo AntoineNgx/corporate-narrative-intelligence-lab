@@ -13,6 +13,8 @@ from state import (
 )
 from data.loader import DEMO_COMPANIES
 
+st.set_page_config(page_title="MAIN")
+
 st.set_page_config(
     page_title="Corporate Narrative Intelligence",
     layout="wide",
