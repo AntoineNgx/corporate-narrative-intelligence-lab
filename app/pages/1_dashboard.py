@@ -12,6 +12,8 @@ st.set_page_config(page_title="NARRATIVE DASHBOARD", layout="wide")
 st.markdown(
     """
     <style>
+    [data-testid="stSidebarNav"] a span {
+    text-transform: uppercase;}
     .kpi-row { display: flex; gap: 16px; margin-bottom: 8px; }
     .kpi { flex: 1; background: #F0F4F8; border-radius: 8px; padding: 16px 20px; border-left: 3px solid #1D4E89; }
     .kpi .label { font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.07em; }

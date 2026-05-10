@@ -13,8 +13,6 @@ from state import (
 )
 from data.loader import DEMO_COMPANIES
 
-st.set_page_config(page_title="MAIN")
-
 st.set_page_config(
     page_title="Corporate Narrative Intelligence",
     layout="wide",
@@ -24,6 +22,8 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    [data-testid="stSidebarNav"] a span {
+    text-transform: uppercase;}
     .metric-card {
         background: #F0F4F8;
         border-radius: 10px;
